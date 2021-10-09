@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Username can only contain letters, numbers, and underscores.";
     }else{
         //prepare a select statement
-        $sql = "SELECT id FROM user1 WHERE username = ?";
+        $sql = "SELECT id FROM users1 WHERE username = ?";
 
         if($stmt = $mysqli->prepare($sql)){
             //bind variables to the prepared statement as parameters
@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
 
         //prepare an insert statement
-        $sql = "INSERT INTO user1 (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users1 (username, password) VALUES (?, ?)";
 
         if($stmt = $mysqli->prepare($sql)){
             //bind variables to the prepared statement as parameters
